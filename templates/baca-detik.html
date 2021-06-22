@@ -1,0 +1,18 @@
+{% extends 'layout.html' %}
+
+{% block berita %}
+<div class="col-md-8 blog-main">
+    <h3 class="pb-3 mb-4 font-italic border-bottom">
+        Berita terbaru dari detik.com
+    </h3>
+    
+    <div class="blog-post">
+        <h2>{{news['judul']}}</h2>
+        <p class="blog-post-meta">{{news['tanggal']}}</p>
+        {%for i in range(len)%}
+            <p>{{news['isi'][i]}}</p>
+        {%endfor%}
+        
+    </div><!-- /.blog-post -->
+</div><!-- /.blog-main -->
+{% endblock %}

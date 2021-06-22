@@ -10,11 +10,12 @@
         <ul class="list-group">
             {%for i in range(len)%}
             <li class="list-group-item">
-                <h5><a href="{{news[i]['link']}}" target="_blank" rel="noopener noreferrer">{{news[i]['judul']}}</a>
-                </h5>
+                <h5>{{news[i]['judul']}}</h5><form action="http://localhost:5000/baca-detik" method="post"><input type="hidden" name="url" value="{{news[i]['link']}}"><button type="submit" class="btn btn-xs btn-primary">Baca disini</button>
+                </form>
             </li>
             {%endfor%}
         </ul>
     </div><!-- /.blog-post -->
 </div><!-- /.blog-main -->
+
 {% endblock %}
