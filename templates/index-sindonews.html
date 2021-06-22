@@ -1,0 +1,20 @@
+{% extends 'layout.html' %}
+
+{% block berita %}
+<div class="col-md-8 blog-main">
+    <h3 class="pb-3 mb-4 font-italic border-bottom">
+        Berita terbaru dari sindonews.com
+    </h3>
+
+    <div class="blog-post">
+        <ul class="list-group">
+            {%for i in range(len)%}
+            <li class="list-group-item">
+                <h5><a href="{{news[i]['link']}}" target="_blank" rel="noopener noreferrer">{{news[i]['judul']}}</a>
+                </h5>
+            </li>
+            {%endfor%}
+        </ul>
+    </div><!-- /.blog-post -->
+</div><!-- /.blog-main -->
+{% endblock %}

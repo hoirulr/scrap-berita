@@ -1,7 +1,7 @@
 import urllib
 from bs4 import BeautifulSoup
 
-def idexKompas():
+def indexKompas():
     
     tautan = []
     url = "http://indeks.kompas.com/indeks/index/news"
@@ -98,22 +98,3 @@ def indexSindonews():
             tautan.append(berita)
     return tautan
 
-
-def trendingTwitter():
-
-    tautan = []
-    url = "https://twitter.com/i/trends"
-    url = urllib.request.urlopen(url)
-
-    result = url.read()
-    url.close()
-    soup = BeautifulSoup(result, "html.parser")
-
-    for link in soup.find_all('div', {'class': 'indeks-title'}):
-
-        for l in link.find_all('a'):
-            judul = link.get_text()
-            isi = l.get('href')
-            berita = {"judul": judul, "link": isi}
-            tautan.append(berita)
-    return tautan
